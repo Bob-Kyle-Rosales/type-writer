@@ -1,0 +1,60 @@
+.document-name-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(41, 40, 40, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  user-select: none;
+}
+
+.document-name-display:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.document-name-text {
+  color: #1a1a1a;
+  font-weight: 600;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.document-name-edit-icon {
+  color: #666;
+  font-size: 12px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.document-name-display:hover .document-name-edit-icon {
+  opacity: 1;
+}
+
+.document-name-editor {
+  padding: 8px 12px;
+}
+
+.document-name-input {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border: 2px solid #1a1a1a;
+  background: #f5f5dc;
+  color: #1a1a1a;
+  border-radius: 4px;
+  outline: none;
+  width: 100%;
+  max-width: 300px;
+}
+
+.document-name-input:focus {
+  border-color: #2d5016;
+  box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.1);
+}

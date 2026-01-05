@@ -1,0 +1,38 @@
+.document-list-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: rgba(245, 245, 220, 0.95);
+  border: 2px solid #1a1a1a;
+  border-radius: 12px;
+  padding: 12px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.document-list-button:hover {
+  background: #1a1a1a;
+  color: #f5f5dc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.document-list-button:active {
+  transform: translateY(0);
+}
+
+.button-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+

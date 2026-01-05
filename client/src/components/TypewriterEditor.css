@@ -1,0 +1,147 @@
+.typewriter-editor {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.paper-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.paper {
+  background: #f5f5dc;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 40px 60px;
+  height: 70%;
+  /* min-width: calc(80 * 8.4px + 120px); */
+  width: 45%;
+  position: relative;
+  transition: transform 0.1s linear;
+  user-select: none;
+}
+
+.paper.animating {
+  transition: transform 0.15s ease-out;
+}
+
+.paper.dragging {
+  transition: none;
+}
+
+.paper:hover {
+  cursor: grab;
+}
+
+.paper-content {
+  position: relative;
+}
+
+.paper-mover-module {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.mover-module-image {
+  width: 120%;
+  max-width: 120%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  margin-bottom: -1in;
+  margin-left: -0.5in;
+  position: relative;
+  z-index: 9999;
+}
+
+.body-module-image {
+  width: 50%;
+  /* max-width: 20%; */
+  height: auto;
+  display: relative;
+  position: absolute;
+  bottom: -20%;
+  left: 26%;
+  pointer-events: none;
+}
+
+.paper-line {
+  position: relative;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 25px;
+  line-height: 24px;
+  color: #1a1a1a;
+  white-space: pre;
+  overflow: visible;
+}
+
+.line-text {
+  display: inline-block;
+}
+
+.cursor {
+  position: absolute;
+  top: 0;
+  font-weight: bold;
+  color: #1a1a1a;
+  animation: blink 1s infinite;
+  pointer-events: none;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.hidden-input {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  border: none;
+  outline: none;
+  z-index: -1;
+}
+
+/* Scrollbar styling */
+.paper-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.paper-container::-webkit-scrollbar-track {
+  background: #2c2c2c;
+}
+
+.paper-container::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 6px;
+}
+
+.paper-container::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
