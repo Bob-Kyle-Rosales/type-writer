@@ -1,14 +1,11 @@
-# Sample Render service manifest. Replace placeholders before use.
-# See https://render.com/docs/deploy-using-render-yaml for details.
 services:
   - type: web
     name: type-writer-server
     env: node
     plan: free
     region: oregon
-    repo: "REPLACE_WITH_YOUR_GIT_REPO" # e.g. github.com/username/repo
     branch: main
-    buildCommand: "cd server && npm install"
+    buildCommand: "cd client && npm install && npm run build && cd ../server && npm install"
     startCommand: "cd server && npm start"
     autoDeploy: true
     envVars:
@@ -16,4 +13,5 @@ services:
         value: production
       - key: PORT
         value: 3001
-# Note: You can remove `repo` and configure the service from Render dashboard instead.
+      - key: JWT_SECRET
+        value: "REPLACE_WITH_STRONG_SECRET"
